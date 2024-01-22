@@ -3,9 +3,9 @@
 
     private String sexo;
 
-    public Pessoa(String nome, String sexo){
+    public Pessoa(String nome, char sexo){
         this.nome = nome;
-        this.sexo = sexo;
+
     }
 
         public String getNome() {

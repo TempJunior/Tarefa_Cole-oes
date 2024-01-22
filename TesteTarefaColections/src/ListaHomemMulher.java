@@ -1,30 +1,58 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class ListaHomemMulher {
     public static void main (String args []){
+        List<Pessoa> pessoas = new ArrayList<>();
+        List<Pessoa> homens = new ArrayList<>();
+        List<Pessoa> mulheres = new ArrayList<>();
+        Scanner s = new Scanner(System.in);
+        int QuantidadePessoas;
+          System.out.println("Digite a quantidade de pesssoas: ");
+        QuantidadePessoas = s.nextInt();
+        for (int i = 0; i < QuantidadePessoas; i++) {
 
-        List<Pessoa> listaHomens = new ArrayList<>();
-        List<Pessoa> listaMulher = new ArrayList<>();
+            System.out.print("Digite o nome da pessoa: ");
 
-        //Adicionar pessoas a lista
-        listaHomens.add(new Pessoa("José", "-m"));
-        listaMulher.add(new Pessoa("Geovanna", "-f"));
-        listaHomens.add(new Pessoa("Mario", "-m"));
-        listaMulher.add(new Pessoa("Timoteo", "-m"));
+            String nome = s.next();
+            System.out.print("Digite o sexo da pessoa (M/F): ");
 
-        System.out.println("Lista de homens: ");
-        exibirPessoas(listaHomens);
+            char sexo = s.next().charAt(0);
 
-        System.out.println("Lista de mulheres: ");
-        exibirPessoas(listaMulher);
 
-    }
-    private static void exibirPessoas(List<Pessoa> Lista){
-        for (Pessoa pessoa : Lista){
-            System.out.println("Nome: " + pessoa.getNome()+ ", Sexo: " + pessoa.getSexo());
+
+            Pessoa pessoa = new Pessoa(nome, sexo);
+
+            pessoas.add(pessoa);
+
+
+
+            if (sexo == 'M') {
+
+                homens.add(pessoa);
+
+            } else if (sexo == 'F') {
+
+                mulheres.add(pessoa);
+
+            }
+
         }
 
+
+
+
+
+
+
+
+
+
+
+        }
+
+
     }
-}
+
